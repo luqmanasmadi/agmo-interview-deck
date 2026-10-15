@@ -17,7 +17,7 @@
 html,body{height:100%}
 body{background:var(--stage-bg);color:var(--ink);font-family:var(--f-body);overflow:hidden;margin:0}
 #viewport{position:fixed;inset:0;display:grid;place-items:center}
-#stage{width:1280px;height:720px;position:relative;transform-origin:center;flex:none}
+#stage{width:1280px;height:720px;position:absolute;left:50%;top:50%;transform-origin:center;flex:none}
 .slide{position:absolute;inset:0;background:var(--paper);border-radius:14px;overflow:hidden;padding:64px 80px;display:none;box-sizing:border-box;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .slide.on{display:block}
 h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;color:var(--ink)}
@@ -251,7 +251,7 @@ body.editing #bar{opacity:1}
   html,body{height:auto}
   body{overflow:auto}
   #viewport{position:static;display:block;padding:12px 12px 24px}
-  #stage{width:auto;height:auto;transform:none!important}
+  #stage{position:static;width:auto;height:auto;transform:none!important}
   .slide{position:relative;inset:auto;display:block!important;padding:28px 20px 48px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
   #bar,#prog{display:none}
   h2{font-size:30px}
@@ -564,7 +564,7 @@ const stage=document.getElementById('stage');
 let cur=0;
 const phone=matchMedia('(max-width:760px)');
 function fit(){if(phone.matches){stage.style.transform='none';slides.forEach(x=>x.classList.add('on'));return}
-  slides.forEach((x,i)=>x.classList.toggle('on',i===cur));const s=Math.min(innerWidth/1280,(innerHeight-56)/720);stage.style.transform=`scale(${s})`;}
+  slides.forEach((x,i)=>x.classList.toggle('on',i===cur));const s=Math.min(innerWidth/1280,(innerHeight-56)/720);stage.style.transform=`translate(-50%,-50%) scale(${s})`;}
 addEventListener('resize',fit);fit();
 
 function counters(sl){sl.querySelectorAll('[data-count]').forEach(el=>{
