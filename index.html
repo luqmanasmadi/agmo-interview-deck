@@ -245,6 +245,68 @@ body.editing .slide [contenteditable],body.editing .slide{outline:2px dashed var
 body.editing #bEdit{background:var(--amber);color:var(--ink)}
 body.editing #bar{opacity:1}
 @media (max-width:700px){#help{display:none}}
+
+/* Phone: drop the fixed 16:9 stage and reflow every slide as a scrolling card */
+@media (max-width:760px){
+  html,body{height:auto}
+  body{overflow:auto}
+  #viewport{position:static;display:block;padding:12px 12px 24px}
+  #stage{width:auto;height:auto;transform:none!important}
+  .slide{position:relative;inset:auto;display:block!important;padding:28px 20px 48px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+  #bar,#prog{display:none}
+  h2{font-size:30px}
+  .hello h2{font-size:38px}
+  .lead{font-size:16px}
+  .s-title .wrap,.s-end .wrap{height:auto;padding-top:36px;gap:16px}
+  .s-title h1{font-size:40px}
+  .s-end h1{font-size:56px}
+  .s-title .ribbon,.s-end .ribbon{width:360px!important;height:480px!important;right:-140px!important}
+  .year{right:20px;top:20px;font-size:12px}
+  .badge{width:auto;max-width:100%;box-sizing:border-box}
+  .hello,.str,.cards,.why,.jpanel,.fit,.jd,.cpanel,.tr,.cr,.sg,.pgrid{grid-template-columns:1fr!important;gap:12px}
+  .hello{height:auto}
+  .tagline{margin-top:18px;font-size:16px}
+  .fact{padding:14px 16px}
+  .fact .n{font-size:28px;min-width:78px}
+  .fact p{font-size:15px}
+  .head{max-width:200px;margin:0 auto}
+  .sc{min-height:0}
+  .why{margin-top:22px}
+  .quote{font-size:20px}
+  .track,.ctrack{grid-template-columns:repeat(2,1fr)!important;gap:16px 10px;margin-top:22px}
+  .ctrack{grid-template-columns:repeat(3,1fr)!important}
+  .track::before,.ctrack::before{display:none}
+  .stop .dot,.ctrack .dot{width:48px;height:48px;margin-bottom:8px;font-size:12px}
+  .stop b{font-size:14px}.stop small{font-size:12px}
+  .jpanel{padding:18px;margin-top:18px}
+  .grid6{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+  .nb{padding:14px}
+  .nb .n{font-size:28px}
+  .nb p{font-size:13.5px}
+  .target{position:static;flex-wrap:wrap;justify-content:flex-start;margin:6px 0 12px}
+  .target svg{width:56px;height:56px}
+  .meter{font-size:34px}
+  .jdr{min-height:0}
+  .jdr span{display:none}
+  .jdr.ok span{display:block}
+  .flow{grid-template-columns:repeat(3,1fr)!important;margin-top:18px!important}
+  .fs{padding:10px}
+  .fs b{font-size:14px}
+  .fs::after,.tc .arrow{display:none}
+  .cpanel{padding:18px}
+  .cpanel h3{font-size:20px}
+  .cpanel ul{font-size:15px}
+  .kres{grid-template-columns:repeat(2,1fr)}
+  .kres b{font-size:20px}
+  .impact{grid-template-columns:repeat(2,1fr)}
+  .toggle{flex-wrap:wrap}
+  .road{height:auto;margin-top:20px}
+  .road svg{display:none}
+  .ms{position:static!important;width:auto;margin-bottom:18px}
+  .goal{position:static;width:190px;height:190px;margin:4px auto 0}
+  .foot{left:20px;right:20px;bottom:14px;font-size:10.5px}
+  .contact span{font-size:14px}
+}
 </style>
 
 <div id="prog"></div>
@@ -500,7 +562,9 @@ let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 slides.forEach((sl,i)=>{if(saved[i])sl.innerHTML=saved[i]});
 const stage=document.getElementById('stage');
 let cur=0;
-function fit(){const s=Math.min(innerWidth/1280,(innerHeight-56)/720);stage.style.transform=`scale(${s})`;}
+const phone=matchMedia('(max-width:760px)');
+function fit(){if(phone.matches){stage.style.transform='none';slides.forEach(x=>x.classList.add('on'));return}
+  slides.forEach((x,i)=>x.classList.toggle('on',i===cur));const s=Math.min(innerWidth/1280,(innerHeight-56)/720);stage.style.transform=`scale(${s})`;}
 addEventListener('resize',fit);fit();
 
 function counters(sl){sl.querySelectorAll('[data-count]').forEach(el=>{
