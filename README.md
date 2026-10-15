@@ -7,7 +7,6 @@ Open `index.html` in a browser.
 | Key | Action |
 |---|---|
 | ← → | Previous / next slide |
-| N | Speaker notes |
 | O | Overview |
 | F | Full screen |
 | E | Edit mode (Esc to finish) |
