@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luqman × Agmo Interview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: fixed 1280x720 stage scaled to fit; one idea per slide; navy + periwinkle + lavender identity matching the On-Demand Doctor App deck */
+:root{
+  --ink:#1F2A5C; --muted:#5A6699; --paper:#F6F3FD; --blush:#DDE3F8; --rose:#AEBDEA;
+  --crimson:#3F5BB5; --wine:#1F2A5C; --amber:#F9B774; --sun:#F7E58F; --line:#D6DCF2;
+  --stage-bg:#121836;
+  --f-display:"Inter", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Inter", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"Inter", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--stage-bg);color:var(--ink);font-family:var(--f-body);overflow:hidden;margin:0}
+#viewport{position:fixed;inset:0;display:grid;place-items:center}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center;flex:none}
+.slide{position:absolute;inset:0;background:var(--paper);border-radius:14px;overflow:hidden;padding:64px 80px;display:none;box-sizing:border-box;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.slide.on{display:block}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;color:var(--ink)}
+h2{font-size:50px;font-weight:800;line-height:1.05;letter-spacing:-.025em}
+h2 em{font-style:normal;color:var(--crimson)}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson)}
+.lead{font-size:21px;color:var(--muted);max-width:60ch;line-height:1.45;margin:14px 0 0}
+p{margin:0}
+.a{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}.d5{animation-delay:.4s}.d6{animation-delay:.48s}.d7{animation-delay:.56s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.a{animation:none}}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,.hot:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.75;pointer-events:none}
+
+/* S1 title */
+.s-title{background:linear-gradient(120deg,#fff 0%,#F6F3FD 40%,#DDE3F8 70%,#A98FD6 100%)}
+.s-title .ribbon{position:absolute;right:-120px;top:-60px;width:720px;height:840px;background:conic-gradient(from 200deg at 60% 50%,#DDE3F8,#7D8DDB,#3F5BB5,#AEBDEA,#DDE3F8);opacity:.5;filter:blur(30px);transform:rotate(18deg)}
+.s-title .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.s-title h1{font-size:76px;line-height:1;font-weight:800;max-width:15ch;color:var(--wine)}
+.s-title h1 span{color:var(--crimson)}
+.badge{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 20px 10px 10px;width:max-content;box-shadow:0 8px 24px rgba(63,91,181,.12)}
+.badge .av{width:44px;height:44px;border-radius:50%;background:var(--crimson);color:#fff;display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-size:18px}
+.badge b{display:block;font-size:17px}.badge small{color:var(--muted);font-size:14px}
+.year{position:absolute;right:80px;top:64px;background:var(--sun);color:var(--wine);font-family:var(--f-mono);font-size:14px;padding:8px 14px;border-radius:8px;transform:rotate(4deg)}
+
+/* S2 hello */
+.hello{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;height:100%;align-items:center}
+.hello h2{font-size:64px}
+.facts{display:grid;gap:14px}
+.fact{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.fact .n{font-family:var(--f-display);font-size:38px;font-weight:800;color:var(--crimson);min-width:120px;font-variant-numeric:tabular-nums}
+.fact p{font-size:17px;line-height:1.35}
+.tagline{margin-top:28px;font-size:19px;padding-left:18px;border-left:4px solid var(--amber);max-width:44ch;line-height:1.45}
+
+/* S3 strengths */
+.str{display:grid;grid-template-columns:420px 1fr;gap:40px;margin-top:28px;align-items:center}
+.head svg{width:100%;height:auto}
+.gear{transform-origin:center;transform-box:fill-box;animation:spin 14s linear infinite}
+.gear.r{animation-direction:reverse;animation-duration:10s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.gear{animation:none}}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sc{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:18px 20px;transition:transform .2s,border-color .2s,box-shadow .2s;min-height:120px}
+.sc:hover{transform:translateY(-3px)}
+.sc .k{display:inline-block;font-family:var(--f-mono);font-size:12px;color:#fff;padding:4px 9px;border-radius:6px;margin-bottom:10px}
+.sc h3{font-size:22px;margin-bottom:6px}
+.sc p{font-size:15px;color:var(--muted);line-height:1.4}
+.sc .more{display:none;margin-top:10px;font-size:14.5px;color:var(--ink);line-height:1.45}
+.sc.open{border-color:var(--crimson);box-shadow:0 12px 30px rgba(63,91,181,.15)}
+.sc.open .more{display:block}
+
+/* S4 why */
+.why{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:44px}
+.wc{background:#fff;border-radius:18px;padding:28px 26px;border:1px solid var(--line);position:relative}
+.wc .ic{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px}
+.wc h3{font-size:24px;margin-bottom:10px;line-height:1.15}
+.wc p{font-size:16px;line-height:1.5;color:var(--muted)}
+.quote{margin-top:30px;font-family:var(--f-display);font-size:26px;color:var(--wine);font-weight:500;max-width:48ch}
+
+/* S5 journey */
+.track{position:relative;margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.track::before{content:"";position:absolute;left:4%;right:4%;top:34px;height:4px;background:linear-gradient(90deg,var(--rose),var(--crimson));border-radius:4px}
+.stop{position:relative;text-align:center;background:none;border:0;padding:0}
+.stop .dot{width:68px;height:68px;margin:0 auto 14px;border-radius:50%;background:#fff;border:4px solid var(--rose);display:grid;place-items:center;font-family:var(--f-mono);font-size:13px;color:var(--crimson);transition:.2s}
+.stop.sel .dot{background:var(--crimson);border-color:var(--crimson);color:#fff;transform:scale(1.08)}
+.stop b{display:block;font-size:17px}.stop small{color:var(--muted);font-size:14px}
+.jpanel{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 30px;display:grid;grid-template-columns:1fr 1fr 260px;gap:28px;min-height:170px}
+.jpanel h4{margin:0 0 8px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson)}
+.jpanel ul{margin:0;padding-left:18px;font-size:16px;line-height:1.55}
+.jpanel .win{background:var(--blush);border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:center}
+.jpanel .win .n{font-family:var(--f-display);font-size:36px;font-weight:800;color:var(--crimson)}
+.jpanel .win p{font-size:14.5px;line-height:1.4}
+
+/* S6 numbers */
+.s-num{background:linear-gradient(160deg,var(--wine),var(--crimson) 70%,#7D8DDB)}
+.s-num h2,.s-num .eyebrow{color:#fff}.s-num .eyebrow{opacity:.8}
+.s-num .lead{color:#DDE3F8}
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.nb{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:22px 24px;color:#fff}
+.nb .n{font-family:var(--f-display);font-size:50px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:var(--sun)}
+.nb p{margin-top:8px;font-size:16px;line-height:1.4;color:#E9ECFA}
+
+/* S7 fit */
+.fit{display:grid;grid-template-columns:1fr 330px;gap:36px;margin-top:26px}
+.jd{display:grid;gap:9px}
+.jdr{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 16px;transition:.2s}
+.jdr .tick{width:26px;height:26px;border-radius:50%;border:2px solid var(--rose);display:grid;place-items:center;font-size:14px;color:transparent;transition:.2s}
+.jdr.ok .tick{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.jdr b{font-size:15.5px;display:block}
+.jdr span{display:none;font-size:14px;color:var(--muted);margin-top:4px;line-height:1.4}
+.jdr.ok span{display:block}
+.target{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.meter{font-family:var(--f-display);font-size:64px;font-weight:800;color:var(--crimson);font-variant-numeric:tabular-nums}
+.target small{color:var(--muted);font-size:15px;text-align:center;max-width:26ch}
+.ghost{background:none;border:1.5px solid var(--crimson);color:var(--crimson);border-radius:999px;padding:9px 18px;font-weight:600;font-size:14px}
+
+/* S7 fit: 2-column rows, space reserved so ticking never pushes content off the slide */
+.fit{grid-template-columns:1fr;margin-top:18px}
+.jd{grid-template-columns:1fr 1fr;gap:10px}
+.jdr{min-height:100px;box-sizing:border-box}
+.jdr span{display:block;visibility:hidden}
+.jdr.ok span{visibility:visible}
+.target{position:absolute;right:80px;top:56px;flex-direction:row;gap:16px}
+.target svg{width:80px;height:80px}
+.target small{max-width:14ch;text-align:left;font-size:13px}
+.meter{font-size:44px}
+
+/* S8 case */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:34px}
+.fs{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px 14px;text-align:left;transition:.2s}
+.fs::after{content:"";position:absolute;right:-9px;top:50%;width:8px;height:2px;background:var(--rose)}
+.fs:last-child::after{display:none}
+.fs .k{font-family:var(--f-mono);font-size:11px;color:var(--crimson);letter-spacing:.1em}
+.fs b{display:block;font-size:17px;margin-top:4px}
+.fs.sel{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.fs.sel .k{color:#DDE3F8}
+.cpanel{margin-top:22px;display:grid;grid-template-columns:1.3fr 1fr;gap:26px;background:var(--blush);border-radius:18px;padding:26px 30px;min-height:200px}
+.cpanel h3{font-size:26px;margin-bottom:10px}
+.cpanel ul{margin:0;padding-left:18px;font-size:16.5px;line-height:1.6}
+.art{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.art span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:14px}
+.art h4{width:100%;margin:0 0 4px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson)}
+
+
+/* SIGMA */
+.sg{display:grid;grid-template-columns:1fr 330px;gap:28px;margin-top:22px}
+.pil{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pl{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;transition:.2s}
+.pl b{display:block;font-size:17px}.pl small{color:var(--muted);font-size:13.5px}
+.pl.sel{background:var(--crimson);border-color:var(--crimson);color:#fff}.pl.sel small{color:#DDE3F8}
+.ppanel{margin-top:14px;background:var(--blush);border-radius:16px;padding:20px 24px;min-height:150px}
+.ppanel ul{margin:0;padding-left:18px;font-size:16.5px;line-height:1.65}
+.sgr{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.sgr h4{margin:0 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson)}
+.sgr h4:not(:first-child){margin-top:16px}
+.sgr ul{margin:0;padding-left:17px;font-size:14.5px;line-height:1.55}
+.loop{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.loop span{background:var(--blush);border-radius:8px;padding:5px 9px;font-size:13.5px;font-weight:600}
+.loop i{color:var(--crimson);font-style:normal;font-weight:700}
+.chips{display:flex;gap:6px;flex-wrap:wrap}.chips span{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:13px}
+
+/* client case */
+.ctrack{position:relative;margin-top:30px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.ctrack::before{content:"";position:absolute;left:6%;right:6%;top:30px;height:4px;background:linear-gradient(90deg,var(--rose),var(--crimson));border-radius:4px}
+.ctrack .dot{width:60px;height:60px;font-size:18px;font-weight:800}
+.kres{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.kres div{background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;display:flex;align-items:baseline;gap:10px}
+.kres b{font-size:26px;font-weight:800;color:var(--sun);font-variant-numeric:tabular-nums}
+.kres span{font-size:13.5px;color:#DDE3F8;line-height:1.3}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;grid-column:1/-1}
+.pgrid div{background:#fff;border-radius:12px;padding:14px}
+.pgrid b{display:block;color:var(--crimson);margin-bottom:6px}
+.pgrid ul{margin:0;padding-left:16px;font-size:14px;line-height:1.5}
+/* S9 BA translate */
+.tr{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;align-items:stretch}
+.tc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.tc .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:6px;color:#fff;display:inline-block;margin-bottom:12px}
+.tc p,.tc li{font-size:15px;line-height:1.5}
+.tc ul{margin:0;padding-left:17px}
+.tc .arrow{position:absolute;right:-14px;top:50%;width:22px;height:22px;background:var(--paper);border-radius:50%;display:grid;place-items:center;color:var(--crimson);font-weight:700;z-index:2;transform:translateY(-50%)}
+.toggle{display:flex;gap:8px;margin-top:22px}
+.toggle button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600}
+.toggle button.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* S10 change request */
+.cr{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:26px}
+.ask{background:var(--ink);color:#fff;border-radius:18px;padding:22px 26px}
+.ask .k{font-family:var(--f-mono);font-size:12px;color:var(--rose);letter-spacing:.12em}
+.ask p{font-family:var(--f-display);font-size:24px;margin-top:8px;line-height:1.3}
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.im{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.im small{display:block;font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.im b{display:block;font-size:20px;margin-top:4px;font-variant-numeric:tabular-nums}
+.im.bad b{color:var(--crimson)}.im.good b{color:#1f7a4d}
+.opts{display:grid;gap:10px;margin-top:16px}
+.opt{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;font-size:15.5px}
+.opt.sel{border-color:var(--crimson);background:var(--blush)}
+.steps{display:grid;gap:10px}
+.st{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.st .no{width:44px;height:44px;border-radius:12px;background:var(--blush);color:var(--crimson);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:20px}
+.st b{font-size:16.5px}.st p{font-size:14.5px;color:var(--muted);line-height:1.4}
+
+/* S11 90 days */
+.s-road{background:linear-gradient(150deg,var(--wine),var(--crimson))}
+.s-road h2,.s-road .eyebrow{color:#fff}
+.s-road .lead{color:#DDE3F8}
+.road{position:relative;margin-top:30px;height:420px}
+.road svg{position:absolute;inset:0;width:100%;height:100%}
+.ms{position:absolute;width:300px;color:#fff;background:none;border:0;text-align:left;padding:0}
+.ms .pin{width:22px;height:22px;border-radius:50%;background:var(--sun);border:4px solid #fff;box-shadow:0 0 0 6px rgba(247,229,143,.3);margin-bottom:10px}
+.ms .k{font-family:var(--f-mono);font-size:12px;color:var(--sun);letter-spacing:.12em}
+.ms b{display:block;font-family:var(--f-display);font-size:26px;margin:2px 0 6px}
+.ms ul{margin:0;padding-left:17px;font-size:15px;line-height:1.5;color:#E9ECFA}
+.goal{position:absolute;right:0;top:0;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#fff 0 18%,var(--rose) 19% 36%,#fff 37% 54%,var(--rose) 55% 72%,#fff 73%);display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.goal p{background:var(--ink);color:#fff;font-size:13.5px;line-height:1.35;padding:10px 12px;border-radius:10px;max-width:170px;text-align:center}
+
+/* S12 thanks */
+.s-end{background:linear-gradient(120deg,#fff 0%,#F6F3FD 40%,#DDE3F8 75%,#A98FD6 100%)}
+.s-end .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.s-end h1{font-size:96px;font-weight:800;color:var(--wine);line-height:1}
+.contact{display:flex;gap:14px;flex-wrap:wrap}
+.contact span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-size:17px;user-select:all}
+.qs{display:flex;gap:10px;flex-wrap:wrap;max-width:900px}
+.qs span{font-size:14px;background:rgba(255,255,255,.7);border:1px dashed var(--crimson);color:var(--wine);border-radius:999px;padding:6px 12px}
+
+/* chrome */
+.foot{position:absolute;left:80px;right:80px;bottom:26px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.08em;pointer-events:none}
+.s-num .foot,.s-road .foot{color:#AEBDEA}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;justify-content:center;color:#C9CEE1;font-size:13px;z-index:10;transition:opacity .3s}
+#bar button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:8px;padding:6px 12px;font-size:13px}
+#bar button:hover{background:rgba(255,255,255,.16)}
+#prog{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--amber),var(--crimson));transition:width .3s;z-index:11}
+#count{font-family:var(--f-mono);min-width:56px;text-align:center}
+body.idle #bar{opacity:0}
+#notes{position:fixed;left:50%;bottom:58px;transform:translateX(-50%);width:min(860px,calc(100% - 32px));max-height:34vh;overflow:auto;background:#1B2350;color:#E3E7F7;border:1px solid #3A4580;border-radius:14px;padding:16px 20px;font-size:15.5px;line-height:1.55;z-index:12;box-sizing:border-box}
+#notes h5{margin:0 0 6px;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--amber)}
+#notes p{margin:0 0 6px}
+#notes details{border-top:1px solid #3A4580;padding:8px 0}
+#notes summary{cursor:pointer;color:#fff}
+#notes details p{margin:6px 0 0 16px;color:#E3E7F7}
+#notes i{color:#F9B774}
+#grid{position:fixed;inset:0;background:rgba(16,20,48,.94);z-index:20;overflow:auto;padding:40px 16px;box-sizing:border-box}
+#grid .gw{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+#grid button{background:#fff;border:0;border-radius:10px;padding:16px;text-align:left;min-height:96px;display:flex;flex-direction:column;gap:6px}
+#grid button small{font-family:var(--f-mono);color:var(--crimson);font-size:11px}
+#grid button b{font-family:var(--f-display);font-size:18px;color:var(--ink)}
+#grid button.cur{outline:3px solid var(--amber)}
+#help{font-size:12px;opacity:.7}
+body.editing .slide [contenteditable],body.editing .slide{outline:2px dashed var(--amber);outline-offset:-6px}
+body.editing #bEdit{background:var(--amber);color:var(--ink)}
+body.editing #bar{opacity:1}
+@media (max-width:700px){#help{display:none}}
+</style>
+
+<div id="prog"></div>
+<div id="viewport"><div id="stage">
+
+<!-- 1 TITLE -->
+<section class="slide s-title" data-title="Title" data-notes="Good morning, thank you for having me. I prepared a short deck so I can show you how I work, not just tell you. It takes about 10 minutes and you can stop me anytime.">
+  <div class="ribbon"></div>
+  <div class="year a">15 · 10 · 2026</div>
+  <div class="wrap">
+    <div class="eyebrow a">Interview presentation · Agmo Studio Sdn Bhd</div>
+    <h1 class="a d1">IT Software Project Manager <span>cum Business Analyst</span></h1>
+    <div class="badge a d2"><div class="av">LA</div><div><b>Luqman Asmadi, PMP®</b><small>Project Manager · 7+ years</small></div></div>
+  </div>
+  <div class="foot"><span>Luqman Asmadi</span><span>01 / 13</span></div>
+</section>
+
+<!-- 2 HELLO -->
+<section class="slide" data-title="Hello, I am Luqman" data-notes="I'm Luqman. 7 years at Aerodyne Group HQ. I started in data, moved to project finance, then project engineering, and now I lead projects end to end. My degree is in Avionics engineering, so I came into software through delivery work: I learned SDLC by running it with developers every day, and I'm PMP certified. I also built three project management apps, ALPHA, OMEGA and SIGMA, each with its own role; I'll show SIGMA later. In short, I'm the person between the client and the dev team who makes sure what gets built is what was needed.">
+  <div class="hello">
+    <div>
+      <div class="eyebrow a">About me</div>
+      <h2 class="a d1" style="margin-top:12px">Hello, I am <em>Luqman.</em></h2>
+      <p class="lead a d2">I sit between the client and the build team, and I make sure what gets built is what was needed, on time and on budget.</p>
+      <p class="tagline a d3">PMP® certified. Avionics engineer by training, software delivery by practice: data, finance, risk and delivery, all in one seat.</p>
+    </div>
+    <div class="facts">
+      <div class="fact a d2"><div class="n">7+</div><p>years at <b>Aerodyne Group HQ</b>, Cyberjaya</p></div>
+      <div class="fact a d3"><div class="n">10M+</div><p>MYR in technology &amp; transformation projects delivered</p></div>
+      <div class="fact a d4"><div class="n">100%</div><p>on-time completion on projects I led</p></div>
+      <div class="fact a d5"><div class="n">3</div><p>web-based project management apps I conceived and launched: <b>ALPHA, OMEGA, SIGMA</b></p></div>
+    </div>
+  </div>
+  <div class="foot"><span>About me</span><span>02 / 13</span></div>
+</section>
+
+<!-- 3 STRENGTHS -->
+<section class="slide" data-title="My Core Strengths" data-notes="Four strengths that map straight to this role. Click each card to open the proof. If they ask which is strongest: requirement translation, because I did it as PM and BA at the same time on SIGMA.">
+  <div class="eyebrow a">What I bring</div>
+  <h2 class="a d1" style="margin-top:10px">My core <em>strengths</em></h2>
+  <div class="str">
+    <div class="head a d2">
+      <svg viewBox="0 0 400 380" aria-hidden="true">
+        <path d="M210 20c-90 0-160 62-160 150 0 42 16 70 34 92 10 13 12 30 12 46v52h120v-40h46c22 0 36-16 36-38v-40l26-6c10-3 13-13 8-22l-26-44c4-90-58-150-96-150z" fill="#3F5BB5"/>
+        <g class="gear" ><circle cx="180" cy="150" r="52" fill="#AEBDEA"/><circle cx="180" cy="150" r="20" fill="#3F5BB5"/>
+          <g fill="#AEBDEA"><rect x="172" y="84" width="16" height="22" rx="3"/><rect x="172" y="194" width="16" height="22" rx="3"/><rect x="114" y="142" width="22" height="16" rx="3"/><rect x="224" y="142" width="22" height="16" rx="3"/></g></g>
+        <g class="gear r"><circle cx="262" cy="200" r="30" fill="#F7E58F"/><circle cx="262" cy="200" r="11" fill="#3F5BB5"/>
+          <g fill="#F7E58F"><rect x="256" y="160" width="12" height="14" rx="2"/><rect x="256" y="226" width="12" height="14" rx="2"/><rect x="222" y="194" width="14" height="12" rx="2"/><rect x="288" y="194" width="14" height="12" rx="2"/></g></g>
+        <circle cx="130" cy="240" r="16" fill="#fff" opacity=".9"/><circle cx="160" cy="258" r="8" fill="#fff" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="cards">
+      <button class="sc a d2" data-acc><span class="k" style="background:#3F5BB5">BA</span><h3>Business to technical</h3><p>Turning what users say into specs devs can build.</p><div class="more">Stakeholder interviews and workshops, then BRD / functional specs, user workflows, acceptance criteria. Did this for SIGMA from zero.</div></button>
+      <button class="sc a d3" data-acc><span class="k" style="background:#1F2A5C">PM</span><h3>Delivery control</h3><p>Time, scope, cost and quality, tracked weekly.</p><div class="more">Roadmaps, release plans, KPI and milestone tracking. MYR10M+ delivered, 100% on time, delivery efficiency up 25%.</div></button>
+      <button class="sc a d4" data-acc><span class="k" style="background:#8A4FC4">CLIENT</span><h3>Stakeholder rapport</h3><p>Calm, clear communication from devs up to execs.</p><div class="more">Coordinated developers, business users, vendors and executives. 100% approval rate on strategic project and investment proposals.</div></button>
+      <button class="sc a d5" data-acc><span class="k" style="background:#1F2A5C">RISK</span><h3>Risk &amp; change control</h3><p>Spot it early, size it, give options.</p><div class="more">Risk registers, issue logs, change requests with impact analysis. Prevented MYR2M+ potential losses; cut cost overruns by 18%.</div></button>
+    </div>
+  </div>
+  <div class="foot"><span>Click a card to open the proof</span><span>03 / 13</span></div>
+</section>
+
+<!-- 4 WHY -->
+<section class="slide" data-title="Why this role" data-notes="Three honest reasons. One, I already do both jobs: on SIGMA I was PM and BA at once. Two, Agmo builds for many clients, so I get variety and I get to be client-facing, which is where I'm strongest. Three, I want to go deeper into software product delivery, not only internal transformation.">
+  <div class="eyebrow a">Motivation</div>
+  <h2 class="a d1" style="margin-top:10px">Why <em>PM cum BA</em>, and why Agmo?</h2>
+  <div class="why">
+    <div class="wc a d2"><div class="ic" style="background:var(--blush)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3F5BB5" stroke-width="2"><path d="M8 7h8M8 12h8M8 17h5"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></div><h3>I already do both jobs</h3><p>On SIGMA I gathered the requirements, wrote the specs, built the app myself and launched it. The hybrid role is how I naturally work.</p></div>
+    <div class="wc a d3"><div class="ic" style="background:#FDEBD7"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8A4FC4" stroke-width="2"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5M11 20c0-3 2.5-5 5-5s5 2 5 5"/></svg></div><h3>Client-facing, many products</h3><p>Agmo builds apps and systems for many clients. That means real users, real deadlines and new domains every project. That is where I learn fastest.</p></div>
+    <div class="wc a d4"><div class="ic" style="background:#EDE4F7"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1F2A5C" stroke-width="2"><path d="M4 17l6-6 4 4 6-8"/><path d="M14 7h6v6"/></svg></div><h3>Go deeper into software</h3><p>I want my next 5 years in software delivery: working daily with dev, UI/UX and QA teams, shipping products people use.</p></div>
+  </div>
+  <p class="quote a d5">“I want clients to come back and ask for me again on their next project.”</p>
+  <div class="foot"><span>Motivation</span><span>04 / 13</span></div>
+</section>
+
+<!-- 5 JOURNEY -->
+<section class="slide" data-title="How my journey prepared me" data-notes="Each role gave me one tool I still use. Click each stop. Data analyst: I report in numbers. Finance: I protect the budget. Lead engineer: I see risk early. PM: I put it all together and deliver.">
+  <div class="eyebrow a">Career path · Aerodyne Group HQ</div>
+  <h2 class="a d1" style="margin-top:10px">How each role <em>prepared me</em></h2>
+  <div class="track a d2" id="track">
+    <button class="stop" data-j="0"><div class="dot">2019</div><b>Data Analyst</b><small>2019 – 2020</small></button>
+    <button class="stop" data-j="1"><div class="dot">2020</div><b>Exec, Project Finance</b><small>2020 – 2021</small></button>
+    <button class="stop" data-j="2"><div class="dot">2021</div><b>Project Lead Engineer</b><small>2021</small></button>
+    <button class="stop sel" data-j="3"><div class="dot">NOW</div><b>Project Manager</b><small>2021 – present</small></button>
+  </div>
+  <div class="jpanel a d3" id="jpanel"></div>
+  <div class="foot"><span>Click a stop on the line</span><span>05 / 13</span></div>
+</section>
+
+<!-- 6 NUMBERS -->
+<section class="slide s-num" data-title="Proof in numbers" data-notes="These are the results, and every number has a story behind it. Pick one they react to and tell the story: for example the 30% fewer reporting errors came from centralising everything into SIGMA.">
+  <div class="eyebrow a">Track record</div>
+  <h2 class="a d1" style="margin-top:10px">Proof in numbers</h2>
+  <p class="lead a d2">Results from projects I led or controlled at Aerodyne Group.</p>
+  <div class="grid6">
+    <div class="nb a d2"><div class="n" data-count="10" data-pre="MYR " data-suf="M+">MYR 10M+</div><p>project value delivered, 100% on time</p></div>
+    <div class="nb a d3"><div class="n" data-count="1.2" data-dec="1" data-pre="MYR " data-suf="M">MYR 1.2M</div><p>cost savings from governance &amp; resource optimisation</p></div>
+    <div class="nb a d4"><div class="n" data-count="2" data-pre="MYR " data-suf="M+">MYR 2M+</div><p>potential losses prevented through early risk control</p></div>
+    <div class="nb a d5"><div class="n" data-count="25" data-suf="%">25%</div><p>faster project delivery from process improvement</p></div>
+    <div class="nb a d6"><div class="n" data-count="30" data-suf="%">30%</div><p>fewer reporting and documentation errors</p></div>
+    <div class="nb a d7"><div class="n" data-count="18" data-suf="%">18%</div><p>lower cost overruns through better forecasting</p></div>
+  </div>
+  <div class="foot"><span>Track record</span><span>06 / 13</span></div>
+</section>
+
+<!-- 7 FIT -->
+<section class="slide" data-title="I fit the purpose" data-notes="This is your job description, line by line. Click each line to show my evidence, or press Match all. Point out: the degree requirement says Computer Science or equivalent; mine is engineering, plus 7 years running SDLC with developers, PMP and Google PM certificates.">
+  <div class="eyebrow a">Your job description vs my experience</div>
+  <h2 class="a d1" style="margin-top:10px">I fit the <em>purpose</em></h2>
+  <div class="fit">
+    <div class="jd" id="jd">
+      <button class="jdr a d1"><div class="tick">✓</div><div><b>Coordinate client, management, tech, UI/UX and QA teams</b><span>Coordinated developers, technical teams, business users, vendors and executives across MYR10M+ of projects.</span></div></button>
+      <button class="jdr a d2"><div class="tick">✓</div><div><b>Gather, align and deliver client requirements</b><span>Stakeholder interviews, requirement workshops, walkthroughs and solution reviews; BRD and functional specs.</span></div></button>
+      <button class="jdr a d2"><div class="tick">✓</div><div><b>Detailed project documentation</b><span>Roadmaps, release plans, risk registers, issue logs, governance records. Cut documentation errors by 30%.</span></div></button>
+      <button class="jdr a d3"><div class="tick">✓</div><div><b>Identify, analyse and perform change requests</b><span>Managed backlog, change requests and enhancement priorities on SIGMA with impact analysis.</span></div></button>
+      <button class="jdr a d3"><div class="tick">✓</div><div><b>Monitor time, scope, cost and quality</b><span>KPI, milestone and adoption tracking; 100% on-time delivery; cost overruns down 18%.</span></div></button>
+      <button class="jdr a d4"><div class="tick">✓</div><div><b>Manage risk, give options for decisions</b><span>Prevented MYR2M+ potential losses; 100% approval on proposals presented to management.</span></div></button>
+      <button class="jdr a d4"><div class="tick">✓</div><div><b>Coach and support the team</b><span>Ran onboarding, user training and UAT support; facilitated cross-functional workshops.</span></div></button>
+      <button class="jdr a d5"><div class="tick">✓</div><div><b>Degree in CS or equivalent, 2–4 yrs software PM</b><span>B.Eng Tech (Hons) Avionics, PMP®, Google PM certificate; 5+ years leading SDLC delivery with dev teams.</span></div></button>
+    </div>
+    <div class="target a d3">
+      <svg width="190" height="190" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="#DDE3F8"/><circle cx="100" cy="100" r="70" fill="#AEBDEA"/><circle cx="100" cy="100" r="48" fill="#DDE3F8"/><circle cx="100" cy="100" r="26" fill="#3F5BB5"/><path d="M196 18 108 94" stroke="#1F2A5C" stroke-width="5" stroke-linecap="round"/><path d="M196 18l-4 18 14-4z" fill="#F9B774"/></svg>
+      <div class="meter" id="meter">0/8</div>
+      <small>requirements matched with evidence</small>
+      <button class="ghost" id="matchAll">Match all</button>
+    </div>
+  </div>
+  <div class="foot"><span>Click each line to show the evidence</span><span>07 / 13</span></div>
+</section>
+
+<!-- 8 CLIENT CASE -->
+<section class="slide" data-title="Client case: asset monitoring" data-notes="Real client story, STAR format. Client is in powerline and utilities; keep the name confidential. Situation: we had a 3-year asset inspection contract. I saw the yearly inspection data was only used in reports, so I proposed a system where they can monitor every asset live in an app. I wrote the specification for the client, the client opened a tender, and we won it. Delivery ran like my Doctor App plan: stage gates for sign-off, 2-week sprints for build, delivered on time. Result: client monitors its assets live, we secured a 10-year contract worth RM3 million a year, and an upsell to develop and train AI that detects defects from inspection images, using the data we already collect. If asked about the tender: it was an open tender run by the client procurement team, and we won on evaluation.">
+  <div class="eyebrow a">Case study 1 · Client project · Powerline &amp; utilities</div>
+  <h2 class="a d1" style="margin-top:10px">From inspection contract to <em>10-year platform</em></h2>
+  <div class="ctrack a d2" id="ctrack">
+    <button class="stop sel" data-k="0"><div class="dot">1</div><b>Deliver</b><small>3-yr inspection</small></button>
+    <button class="stop" data-k="1"><div class="dot">2</div><b>Spot &amp; propose</b><small>Live asset view</small></button>
+    <button class="stop" data-k="2"><div class="dot">3</div><b>Specify</b><small>Spec for client</small></button>
+    <button class="stop" data-k="3"><div class="dot">4</div><b>Tender</b><small>Open tender, won</small></button>
+    <button class="stop" data-k="4"><div class="dot">5</div><b>Build</b><small>Gates + sprints</small></button>
+    <button class="stop" data-k="5"><div class="dot">6</div><b>Result</b><small>On time</small></button>
+  </div>
+  <div class="cpanel a d3" id="kpanel" style="margin-top:20px;min-height:170px"></div>
+  <div class="kres a d4">
+    <div><b>10 yrs</b><span>new contract secured</span></div>
+    <div><b>RM3M</b><span>contract value per year</span></div>
+    <div><b>100%</b><span>delivered on time</span></div>
+    <div><b>AI</b><span>upsell: defect detection from inspection images</span></div>
+  </div>
+  <div class="foot"><span>Client name kept confidential · click each step</span><span>08 / 13</span></div>
+</section>
+
+<!-- 9 SIGMA -->
+<section class="slide" data-title="Building SIGMA" data-notes="My best internal case: SIGMA, System for Integrated Governance, Monitoring and Accounting. I was PM and BA at the same time. Click through the phases. Key message: I started from user pain, not from features, built it myself from A to Z, from requirements to code to deployment, then ran UAT and adoption. It is live today on Next.js and Supabase. This means I understand exactly what developers deal with. Click Inside to show the 4 pillars. Offer a 2-minute live demo if allowed; do not show real company figures.">
+  <div class="eyebrow a">Case study 2 · In-house product I designed and built, A to Z</div>
+  <h2 class="a d1" style="margin-top:10px">Building <em>SIGMA</em>, our project management platform</h2>
+  <p class="lead a d2" style="font-size:17px;margin-top:8px">System for Integrated Governance, Monitoring &amp; Accounting: plan, progress, money and decisions in one place.</p>
+  <div class="flow a d2" id="flow" style="grid-template-columns:repeat(7,1fr);margin-top:22px">
+    <button class="fs sel" data-c="0"><span class="k">01</span><b>Discover</b></button>
+    <button class="fs" data-c="1"><span class="k">02</span><b>Define</b></button>
+    <button class="fs" data-c="2"><span class="k">03</span><b>Build</b></button>
+    <button class="fs" data-c="3"><span class="k">04</span><b>Test</b></button>
+    <button class="fs" data-c="4"><span class="k">05</span><b>Launch</b></button>
+    <button class="fs" data-c="5"><span class="k">06</span><b>Inside</b></button>
+    <button class="fs" data-c="6"><span class="k">07</span><b>Result</b></button>
+  </div>
+  <div class="cpanel a d3" id="cpanel"></div>
+  <div class="foot"><span>Click each phase</span><span>09 / 13</span></div>
+</section>
+
+<!-- 9 BA TRANSLATE -->
+<section class="slide" data-title="From business ask to build" data-notes="This shows the BA half of the job. A user says something vague; I turn it into a user story, acceptance criteria and tasks the dev, UI/UX and QA teams can act on. Toggle the example to show it works for different kinds of apps.">
+  <div class="eyebrow a">How I work as a BA</div>
+  <h2 class="a d1" style="margin-top:10px">From a business ask to a <em>buildable spec</em></h2>
+  <div class="toggle a d2" id="exToggle">
+    <button class="sel" data-x="0">Internal dashboard</button>
+    <button data-x="1">Mobile app</button>
+  </div>
+  <div class="tr" id="tr"></div>
+  <div class="foot"><span>Toggle the example</span><span>10 / 13</span></div>
+</section>
+
+<!-- 10 CHANGE REQUEST -->
+<section class="slide" data-title="Handling a change request" data-notes="A common Agmo scenario. Client asks for a new feature late. I never say yes or no on the spot. I log it, size the impact on scope, time, cost and quality, and give options. Click the options to show how the impact changes. Then the client and management decide, and I update the baseline.">
+  <div class="eyebrow a">Scenario</div>
+  <h2 class="a d1" style="margin-top:10px">Handling a <em>change request</em></h2>
+  <div class="cr">
+    <div class="a d2">
+      <div class="ask"><div class="k">CLIENT · 2 WEEKS BEFORE UAT</div><p>“Can we add e-wallet payment to the app? Our boss wants it for launch.”</p></div>
+      <div class="opts" id="opts">
+        <button class="opt sel" data-o="0"><b>A.</b> Add it now, same launch date</button>
+        <button class="opt" data-o="1"><b>B.</b> Add it now, move launch by 2 weeks</button>
+        <button class="opt" data-o="2"><b>C.</b> Launch on time, e-wallet in Phase 2</button>
+      </div>
+      <div class="impact" id="impact"></div>
+    </div>
+    <div class="steps">
+      <div class="st a d2"><div class="no">1</div><div><b>Log it</b><p>CR form: what, why, who asked, by when.</p></div></div>
+      <div class="st a d3"><div class="no">2</div><div><b>Size the impact</b><p>With tech, UI/UX and QA leads: effort, timeline, cost, test scope.</p></div></div>
+      <div class="st a d4"><div class="no">3</div><div><b>Give options</b><p>2–3 options with trade-offs and my recommendation.</p></div></div>
+      <div class="st a d5"><div class="no">4</div><div><b>Decide together</b><p>Client and management sign off; no silent scope creep.</p></div></div>
+      <div class="st a d6"><div class="no">5</div><div><b>Update &amp; tell</b><p>New baseline, backlog, quotation if billable, and status report.</p></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Click an option to see its impact</span><span>11 / 13</span></div>
+</section>
+
+<!-- 11 90 DAYS -->
+<section class="slide s-road" data-title="My first 90 days" data-notes="If I join, this is my plan. First month I learn Agmo's way of working and the people. Second month I own a project. Third month I deliver a milestone and improve one thing. The goal: a client asks for me by name.">
+  <div class="eyebrow a">If I join Agmo</div>
+  <h2 class="a d1" style="margin-top:10px">My first 90 days</h2>
+  <div class="road a d2">
+    <svg viewBox="0 0 1120 420" preserveAspectRatio="none" aria-hidden="true"><path d="M10 380 C 220 380, 260 260, 420 250 S 700 200, 760 140 S 900 60, 1000 100" fill="none" stroke="#F7E58F" stroke-width="4" stroke-dasharray="10 10" opacity=".8"/></svg>
+    <div class="ms" style="left:0;top:150px"><div class="pin"></div><span class="k">DAY 1 – 30</span><b>Learn</b><ul><li>Agmo delivery process, templates, Jira / Confluence</li><li>Meet tech, UI/UX and QA leads</li><li>Shadow a live client project</li></ul></div>
+    <div class="ms" style="left:350px;top:40px"><div class="pin"></div><span class="k">DAY 31 – 60</span><b>Own</b><ul><li>Take a project end to end</li><li>Run client requirement workshops</li><li>Set the doc pack: BRD, plan, RAID log</li></ul></div>
+    <div class="ms" style="left:640px;top:220px"><div class="pin"></div><span class="k">DAY 61 – 90</span><b>Deliver &amp; improve</b><ul><li>Hit the first milestone on time</li><li>Weekly client status rhythm</li><li>Share one process improvement</li></ul></div>
+    <div class="goal"><p>Goal: become the PM clients request again for their next project</p></div>
+  </div>
+  <div class="foot"><span>90-day plan</span><span>12 / 13</span></div>
+</section>
+
+<!-- 12 THANKS -->
+<section class="slide s-end" data-title="Thank you" data-notes="Thank you. Invite questions. Q&amp;A answers are in the separate prep file.">
+  <div class="ribbon" style="position:absolute;right:-120px;top:-60px;width:720px;height:840px;background:conic-gradient(from 200deg at 60% 50%,#DDE3F8,#7D8DDB,#3F5BB5,#AEBDEA,#DDE3F8);opacity:.45;filter:blur(30px);transform:rotate(18deg)"></div>
+  <div class="wrap">
+    <div class="eyebrow a">Questions welcome</div>
+    <h1 class="a d1">Thank you.</h1>
+    <p class="lead a d2" style="color:var(--ink)">I'd love to bring this way of working to Agmo's clients and teams.</p>
+    <div class="contact a d3"><span>nikluqman96@gmail.com</span><span>011-5440 9043</span><span>Batu Caves, Selangor</span></div>
+    <div class="qs a d4"><span>PMP®</span><span>Lean Six Sigma Yellow Belt</span><span>Google PM Certificate</span><span>Kanban PPM</span><span>Graduate Engineer (BEM)</span><span>Graduate Technologist (MBOT)</span></div>
+  </div>
+  <div class="foot"><span>Luqman Asmadi, PMP®</span><span>13 / 13</span></div>
+</section>
+
+</div></div>
+
+<div id="notes" hidden><h5>SPEAKER NOTES · press N to hide</h5><div id="notesBody"></div></div>
+<div id="grid" hidden><div class="gw" id="gridW"></div></div>
+<div id="bar">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <span id="count">1 / 13</span>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="bNotes">Notes</button>
+  <button id="bGrid">Overview</button>
+  <button id="bFull">Full screen</button>
+  <button id="bEdit">Edit</button>
+  <button id="bReset" hidden>Reset edits</button>
+  <span id="help">← → slide · N notes · O overview · F full screen · E edit</span>
+</div>
+
+<script>
+(()=>{
+const slides=[...document.querySelectorAll('.slide')];
+const KEY='agmo-deck-edits-v2';
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+slides.forEach((sl,i)=>{if(saved[i])sl.innerHTML=saved[i]});
+const stage=document.getElementById('stage');
+let cur=0;
+function fit(){const s=Math.min(innerWidth/1280,(innerHeight-56)/720);stage.style.transform=`scale(${s})`;}
+addEventListener('resize',fit);fit();
+
+function counters(sl){sl.querySelectorAll('[data-count]').forEach(el=>{
+  const t=+el.dataset.count,d=+(el.dataset.dec||0),pre=el.dataset.pre||'',suf=el.dataset.suf||'';
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){return}
+  const t0=performance.now();
+  (function step(now){const p=Math.min(1,(now-t0)/1100),e=1-Math.pow(1-p,3);el.textContent=pre+(t*e).toFixed(d)+suf;if(p<1)requestAnimationFrame(step)})(t0);
+});}
+
+function go(i){
+  i=Math.max(0,Math.min(slides.length-1,i));
+  slides[cur].classList.remove('on');
+  cur=i;
+  const s=slides[cur];
+  s.classList.add('on');
+  s.querySelectorAll('.a').forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation=''});
+  counters(s);
+  document.getElementById('count').textContent=`${cur+1} / ${slides.length}`;
+  document.getElementById('prog').style.width=((cur+1)/slides.length*100)+'%';
+  document.getElementById('notesBody').innerHTML='<p>'+s.dataset.notes+'</p>';
+  try{history.replaceState(null,'','#s'+(cur+1))}catch(e){}
+}
+const h=(location.hash.match(/^#s(\d+)$/)||[])[1];
+slides[0].classList.add('on');go(h?+h-1:0);
+
+document.getElementById('prev').onclick=()=>go(cur-1);
+document.getElementById('next').onclick=()=>go(cur+1);
+const notes=document.getElementById('notes'),grid=document.getElementById('grid');
+const tN=()=>notes.hidden=!notes.hidden;
+function tG(){grid.hidden=!grid.hidden;if(!grid.hidden){const w=document.getElementById('gridW');w.innerHTML='';slides.forEach((s,i)=>{const b=document.createElement('button');if(i===cur)b.className='cur';b.innerHTML=`<small>${String(i+1).padStart(2,'0')}</small><b>${s.dataset.title}</b>`;b.onclick=()=>{go(i);grid.hidden=true};w.appendChild(b)})}}
+function tF(){try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}}
+document.getElementById('bNotes').onclick=tN;document.getElementById('bGrid').onclick=tG;document.getElementById('bFull').onclick=tF;
+addEventListener('keydown',e=>{
+  if(document.body.classList.contains('editing'))return;
+  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}
+  else if(e.key==='Home')go(0);else if(e.key==='End')go(slides.length-1);
+  else if(e.key==='n'||e.key==='N')tN();else if(e.key==='o'||e.key==='O'||e.key==='Escape'&&!grid.hidden)tG();
+  else if(e.key==='f'||e.key==='F')tF();
+  else if(e.key==='e'||e.key==='E')document.getElementById('bEdit').click();
+});
+let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)go(cur+(dx<0?1:-1));tx=null});
+let idle;addEventListener('mousemove',()=>{document.body.classList.remove('idle');clearTimeout(idle);idle=setTimeout(()=>document.body.classList.add('idle'),2500)});
+
+/* edit mode */
+let editing=false;const eb=document.getElementById('bEdit'),er=document.getElementById('bReset');
+function tE(){editing=!editing;document.body.classList.toggle('editing',editing);slides.forEach(sl=>sl.contentEditable=editing?'true':'false');eb.textContent=editing?'Done editing':'Edit';er.hidden=!editing;if(!editing)save()}
+const dirty=new Set(Object.keys(saved).map(Number));
+function save(){const o={};dirty.forEach(i=>o[i]=slides[i].innerHTML);try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+document.getElementById('stage').addEventListener('input',e=>{if(!editing)return;const sl=e.target.closest('.slide');if(sl)dirty.add(slides.indexOf(sl));save()});
+eb.onclick=tE;
+er.onclick=()=>{if(er.dataset.sure){try{localStorage.removeItem(KEY)}catch(e){}location.reload()}else{er.dataset.sure=1;er.textContent='Click again to reset'}};
+addEventListener('keydown',e=>{if(e.key==='Escape'&&editing){e.preventDefault();tE()}},true);
+
+/* S3 accordion */
+document.querySelectorAll('[data-acc]').forEach(b=>b.onclick=()=>b.classList.toggle('open'));
+
+/* S5 journey */
+const J=[
+ {did:['Built Power BI & Tableau dashboards','KPI scorecards and portfolio reports','Automated manual reporting'],use:['I report status in numbers, not feelings','Clients get dashboards, not long emails'],n:'Data',w:'Faster, cleaner management reporting through automation'},
+ {did:['Managed portfolio finance over MYR5M','Budgets, forecasts, variance analysis','Business cases and investment reviews'],use:['I protect project margin and cost','I can price a change request properly'],n:'−18%',w:'cost overruns through better forecasting and controls'},
+ {did:['Risk analysis across many projects','Schedules, issue logs, RAID trackers','Bridge between tech and business'],use:['I see risk early and escalate with options','Good documentation habit from day one'],n:'MYR 2M+',w:'potential losses prevented through risk control'},
+ {did:['End-to-end delivery, MYR10M+ portfolio','Requirements, roadmaps, SDLC with devs, UAT','Built SIGMA'],use:['Everything above, combined in one role','This is the PM cum BA job I am applying for'],n:'100%',w:'on-time completion; delivery efficiency up 25%'}
+];
+const jp=document.getElementById('jpanel');
+function showJ(i){document.querySelectorAll('#track .stop').forEach((b,k)=>b.classList.toggle('sel',k===i));const j=J[i];
+ jp.innerHTML=`<div><h4>What I did</h4><ul>${j.did.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><h4>What it gives Agmo</h4><ul>${j.use.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="win"><div class="n">${j.n}</div><p>${j.w}</p></div>`}
+document.querySelectorAll('#track .stop').forEach(b=>b.onclick=()=>showJ(+b.dataset.j));showJ(3);
+
+/* S7 fit */
+const rows=[...document.querySelectorAll('#jd .jdr')],meter=document.getElementById('meter');
+const upd=()=>meter.textContent=rows.filter(r=>r.classList.contains('ok')).length+'/'+rows.length;
+rows.forEach(r=>r.onclick=()=>{r.classList.toggle('ok');upd()});
+document.getElementById('matchAll').onclick=()=>{const all=rows.every(r=>r.classList.contains('ok'));rows.forEach((r,i)=>setTimeout(()=>{r.classList.toggle('ok',!all);upd()},all?0:i*120))};
+
+/* S8 SIGMA case */
+const C=[
+ {t:'Start from the pain',b:['Stakeholder interviews with PMs, PMO and management','Workshops to map how projects were tracked','Found the pain: data scattered in Excel, email and folders'],a:['Interview notes','Pain-point map','Current workflow']},
+ {t:'Write what to build',b:['Product requirements and user workflows','Functional specs and reporting requirements','Prioritised roadmap: must-have first'],a:['BRD','Functional spec','User flows','Roadmap']},
+ {t:'Built it myself, A to Z',b:['Designed the data model, backend and screens','Coded and deployed it: Next.js, Supabase, Vercel, GitHub CI','Ran my own backlog, releases and change requests'],a:['Data model','Working app','Release log','CR log']},
+ {t:'Prove it works',b:['Requirement walkthroughs and solution reviews','Facilitated UAT with real users','Fixed defects and shipped updates quickly'],a:['UAT scripts','Defect log','Sign-off']},
+ {t:'Get people to use it',b:['User onboarding and training sessions','Adoption tracking','Improvements based on user feedback'],a:['Training deck','Adoption metrics','Feedback log']},
+ {inside:1},
+ {t:'One platform for every project',b:['Schedules, risks, issues, actions, documents and dashboards in one place','Shipped: roles and dashboard, project registration, costing, invoices and bills, Charter PDF','Reporting and documentation errors down 30%'],a:['−30% errors','Single source of truth','Next.js','Supabase','Vercel']}
+];
+const PIL=[['Governance',['Fixed approval flow for changes','Signed, time-stamped approvals','Decisions queue']],['Monitoring',['Schedule, cost, risk dashboard','On track / at risk / critical','RAID log, sprint board, defects']],['Accounting',['Budget vs actual per project','POs, bills, invoices linked','Margin and cash visible']],['Collaboration',['Client portal, PM publishes','Minutes with action owners','Role-based access']]];
+const cp=document.getElementById('cpanel');
+function showC(i){document.querySelectorAll('#flow .fs').forEach((b,k)=>b.classList.toggle('sel',k===i));const c=C[i];
+ if(c.inside){cp.innerHTML='<div class="pgrid">'+PIL.map(([h,l])=>`<div><b>${h}</b><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')+'</div>';return}
+ cp.innerHTML=`<div><h3>${c.t}</h3><ul>${c.b.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="art"><h4>${i===6?'Outcome':'Deliverables'}</h4>${c.a.map(x=>`<span>${x}</span>`).join('')}</div>`}
+document.querySelectorAll('#flow .fs').forEach(b=>b.onclick=()=>showC(+b.dataset.c));showC(0);
+
+/* client case */
+const K=[
+ {t:'Deliver the inspection contract',b:['3-year powerline asset inspection contract','Inspection data collected every year','Built trust with the client team'],a:['Yearly inspection data','Client relationship']},
+ {t:'See the next need',b:['Inspection data was only used in yearly reports','Proposed a system to monitor every asset live in an app','Pitched the value: faster decisions, less downtime'],a:['Proposal','Value case']},
+ {t:'Write the specification',b:['Requirement workshops with the client asset team','Business and functional requirements, user flows','Scope the client could take to tender'],a:['BRD','SRS / spec','User flows']},
+ {t:'Open tender, won',b:['Client opened a tender based on the specification','Prepared our technical and commercial proposal','Won the tender'],a:['Tender proposal','Award']},
+ {t:'Hybrid delivery',b:['Stage gates for sign-off: charter, requirements freeze, UAT, go-live','2-week sprints with demos to the client','Change requests, RAID log and weekly status throughout'],a:['Charter','Sprint demos','UAT sign-off','Go-live']},
+ {t:'Live monitoring, long-term partner',b:['Client now monitors every asset live in the app','Delivered on time','Secured a 10-year contract at RM3M a year','Upsell: develop and train AI to detect defects from inspection images'],a:['10-yr contract','RM3M / year','AI defect detection']}
+];
+const kp=document.getElementById('kpanel');
+function showK(i){document.querySelectorAll('#ctrack .stop').forEach((b,k)=>b.classList.toggle('sel',k===i));const c=K[i];
+ kp.innerHTML=`<div><h3>${c.t}</h3><ul>${c.b.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="art"><h4>${i===5?'Outcome':'Deliverables'}</h4>${c.a.map(x=>`<span>${x}</span>`).join('')}</div>`}
+document.querySelectorAll('#ctrack .stop').forEach(b=>b.onclick=()=>showK(+b.dataset.k));showK(0);
+
+/* S9 translate */
+const X=[
+ [{k:'Business ask',c:'#5A6699',h:'<p>“Managers can’t see which projects are late until the monthly meeting.”</p>'},
+  {k:'User story',c:'#3F5BB5',h:'<p>As a <b>project director</b>, I want a portfolio view of project health, so I can act on delays early.</p>'},
+  {k:'Acceptance criteria',c:'#8A4FC4',h:'<ul><li>Shows RAG status per project</li><li>Late milestones flagged in red</li><li>Updates daily from the schedule</li></ul>'},
+  {k:'Team tasks',c:'#1F2A5C',h:'<ul><li><b>UI/UX:</b> dashboard wireframe</li><li><b>Dev:</b> status API + daily sync</li><li><b>QA:</b> test cases per criterion</li></ul>'}],
+ [{k:'Business ask',c:'#5A6699',h:'<p>“Customers keep calling to ask where their order is.”</p>'},
+  {k:'User story',c:'#3F5BB5',h:'<p>As a <b>customer</b>, I want to track my order in the app, so I don’t need to call.</p>'},
+  {k:'Acceptance criteria',c:'#8A4FC4',h:'<ul><li>Order status in 4 stages</li><li>Push notification on each change</li><li>Works on iOS and Android</li></ul>'},
+  {k:'Team tasks',c:'#1F2A5C',h:'<ul><li><b>UI/UX:</b> tracking screen</li><li><b>Dev:</b> status webhook + push</li><li><b>QA:</b> device test matrix</li></ul>'}]
+];
+const tr=document.getElementById('tr');
+function showX(i){document.querySelectorAll('#exToggle button').forEach((b,k)=>b.classList.toggle('sel',k===i));
+ tr.innerHTML=X[i].map((c,k)=>`<div class="tc a d${k+1}"><span class="k" style="background:${c.c}">${c.k}</span>${c.h}${k<3?'<span class="arrow">›</span>':''}</div>`).join('')}
+document.querySelectorAll('#exToggle button').forEach(b=>b.onclick=()=>showX(+b.dataset.x));showX(0);
+
+/* S10 CR */
+const O=[
+ [['Scope','+1 feature','bad'],['Time','Same','good'],['Cost','+Overtime','bad'],['Quality','High risk','bad']],
+ [['Scope','+1 feature','bad'],['Time','+2 weeks','bad'],['Cost','+CR quote','bad'],['Quality','Protected','good']],
+ [['Scope','Phase 2','good'],['Time','On time','good'],['Cost','Quoted later','good'],['Quality','Protected','good']]
+];
+const im=document.getElementById('impact');
+function showO(i){document.querySelectorAll('#opts .opt').forEach((b,k)=>b.classList.toggle('sel',k===i));
+ im.innerHTML=O[i].map(([a,b,c])=>`<div class="im ${c}"><small>${a}</small><b>${b}</b></div>`).join('')}
+document.querySelectorAll('#opts .opt').forEach(b=>b.onclick=()=>showO(+b.dataset.o));showO(0);
+})();
+</script>
+
+</html>
